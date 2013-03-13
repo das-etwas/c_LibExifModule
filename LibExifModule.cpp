@@ -28,7 +28,7 @@
 
 namespace 
 {
-    const char *MODULE_NAME = "ExifExtract";
+    const char *MODULE_NAME = "tskLibExifModule";
     const char *MODULE_DESCRIPTION = "Stores extracted EXIF data to the image database";
     const char *MODULE_VERSION = "1.0.0";
 
