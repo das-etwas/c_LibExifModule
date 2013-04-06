@@ -24,6 +24,19 @@ if test -e /usr/local/include; then
 fi
 
 # Checks for libraries.
+AC_CHECK_HEADERS([libexif/exif-loader.h],
+    [AC_CHECK_LIB([exif], [exif_loader_new], 
+            [with_libexif=yes], 
+            [AC_MSG_WARN([libexif not installed])]
+    )],
+    [AC_MSG_WARN([libexif not installed])]
+)
+AM_CONDITIONAL([HAS_LIBEXIF], [test "x$with_libexif" = "xyes"])
+AM_COND_IF([HAS_LIBEXIF], [rm -f missing_libs.txt], [echo "libexif for ExifModule" > missing_libs.txt])
+
+# If libexif was not found, we continue on and do not error. 
+# The makefile will simply not compile anything. 
+# This allows us to more easily build from the top-level makefile in the framework.
 
 # Checks for header files.
 AC_CHECK_HEADERS([stdlib.h string.h])

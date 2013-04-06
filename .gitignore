@@ -39,4 +39,5 @@ libtool
 m4/libtool.m4
 m4/lt*.m4
 config/*
+missing_libs.txt 
 
