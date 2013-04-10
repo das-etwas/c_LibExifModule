@@ -18,6 +18,11 @@ win32/Release/
 *.suo
 *.user
 
+# IntelliSense data
+win32/*.ncb
+win32/*.sdf
+win32/ipch/
+
 # Make crud
 Makefile
 .deps
