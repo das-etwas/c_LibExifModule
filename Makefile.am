@@ -15,6 +15,8 @@ else
 
 bin_PROGRAMS = no_libmagic
 
+.PHONY: no_libmagic
+no_libmagic_SOURCES = 
 no_libmagic:
 	@echo "Nothing to do for ExifModule, libexif not found."
 
